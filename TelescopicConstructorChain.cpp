@@ -19,7 +19,7 @@ class BankCustomer{
         this->phoneNumber="";
         
     }
-       BankCustomer(string nameArg,string adharNumberArg,string panNumberArg,string emailArg,string phoneArg){
+       BankCustomer(string phoneArg):BankCustomer(string nameArg,string adharNumberArg,string panNumberArg){
         this->name=nameArg;
         this->adharNumber=adharNumberArg;
         this->panNumber=panNumberArg;
