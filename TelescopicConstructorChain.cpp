@@ -8,38 +8,57 @@ class BankCustomer{
         string adharNumber;
         string panNumber;
         string emailId;
-        string phoneNumber;
+        const char* phoneNumber;
     
     public:
-    BankCustomer() {}
     //Compile Time Polymorphism , constructor Overloading
-    BankCustomer(string nameArg,string adharNumberArg,string panNumberArg){
-        this->name=nameArg;
-        this->adharNumber=adharNumberArg;
-        this->panNumber=panNumberArg;
+    BankCustomer()
+    {
+        this->name="";
+        this->adharNumber="";
+        this->panNumber="";
         this->emailId="";
-        this->phoneNumber="";
-        
+        this->phoneNumber=nullptr;
     }
-       BankCustomer(string phoneArg):BankCustomer(string nameArg,string adharNumberArg,string panNumberArg){
+    BankCustomer(string nameArg,string adharNumberArg,string panNumberArg):BankCustomer()
+    {
         this->name=nameArg;
         this->adharNumber=adharNumberArg;
         this->panNumber=panNumberArg;
-        this->emailId=emailArg;
-        this->phoneNumber=phoneArg;
-        
     }
- 
+     BankCustomer(string nameArg,string adharNumberArg,string panNumberArg,const char* phoneArg,string emailArg): BankCustomer(nameArg,adharNumberArg,panNumberArg)
+     {
+        this->phoneNumber=phoneArg;
+        this->emailId=emailArg;
+    }
     
-    void printCustomerInfo(){
-            //cout<<
+    void printCustomerInfo()
+    {
+        //cout<<
+        cout<<this->name<<endl;
+        cout<<this->adharNumber<<endl;
+        cout<<this->panNumber<<endl;
+        cout<<this->emailId<<endl;
+        if (phoneNumber != nullptr) 
+        {
+            cout << "Phone: " << phoneNumber << endl;
+        }
+        else
+        {
+            cout << "Phone: Not provided" << endl;
+        }
     }
     
 };
 
 int main() {
     // Write C++ code here
-    std::cout << "Try programiz.pro";
-    
+    cout<<"------customerOne-----------"<<endl;
+    BankCustomer customerOne("Name: Ajay","AdhaarNumber : 789456123789","PanNumber : AJY789798");
+    customerOne.printCustomerInfo();
+    cout<<"------customerTwo-----------"<<endl;
+    BankCustomer customerTwo("Name: Ajay","AdhaarNumber : 789456123789","PanNumber : AJY789798","7897897897","Email : aja@7899.com");
+    customerTwo.printCustomerInfo();
+
     return 0;
 }
