@@ -54,10 +54,10 @@ class BankCustomer{
 int main() {
     // Write C++ code here
     cout<<"------customerOne-----------"<<endl;
-    BankCustomer customerOne("Name: Ajay","AdhaarNumber : 789456123789","PanNumber : AJY789798");
+    BankCustomer customerOne("Name: sony","AdhaarNumber : 999988887777","PanNumber : SON987654");
     customerOne.printCustomerInfo();
     cout<<"------customerTwo-----------"<<endl;
-    BankCustomer customerTwo("Name: Ajay","AdhaarNumber : 789456123789","PanNumber : AJY789798","7897897897","Email : aja@7899.com");
+    BankCustomer customerTwo("Name: sony","AdhaarNumber : 999988887777","PanNumber : SON987654","9876543210","Email : sony@28gmail.com");
     customerTwo.printCustomerInfo();
 
     return 0;
